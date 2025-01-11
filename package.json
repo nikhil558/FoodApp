@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "parcel": "^2.13.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "name": "foodapp",
+  "version": "1.0.0",
+  "description": "food application",
+  "main": "App.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "keywords": [
+    "food",
+    "delivery",
+    "order"
+  ],
+  "author": "Nikhil",
+  "license": "ISC",
+  "devDependencies": {
+    "process": "^0.11.10"
+  }
+}

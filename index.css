@@ -1,0 +1,86 @@
+.header-container {
+    display:flex;
+    justify-content: space-between;
+    width:100%;
+    height:100px;
+    border: 2px solid black;
+}
+.logo {
+    width:100px;
+    height:100px;
+}
+
+.nav-container > ul {
+    display:flex;
+}
+
+.nav-container > ul > li {
+    margin: 10px;
+    list-style: none;
+    font-size: 20px;
+}
+
+.nav-container{
+    padding:0px 20px;
+    margin-top: 10px;
+}
+
+.search-bar{
+    width: 600px;
+    height: 50px;
+}
+
+.search-container{
+    display:flex ;
+}
+
+.resturent-card{
+    width: 275px;
+    height:300px;
+    background-color: transparent;
+    margin:20px;
+}
+
+.resturent-card:hover{
+    width: 250px;
+    height:275px;
+    cursor: pointer;
+}
+
+.resturent-card:hover .res-img > span{
+    font-size:10px;
+}
+
+.resturent-card:hover .res-details > h3{
+    font-size:15px;
+}
+
+.res-img{
+    width:100%;
+    height:185px;
+    display:flex;
+    border-radius: 25px;
+    justify-content: flex-start;
+    align-items: flex-end;
+    
+}
+
+
+.resturents-list{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.res-details{
+    color:black;
+    padding:10px;
+}
+
+.res-details > h3 {
+    margin:1px;
+    display:-webkit-box;
+    overflow-wrap: break-word;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
