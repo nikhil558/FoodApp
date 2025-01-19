@@ -1,5 +1,7 @@
 import {LOGO_IMG} from "../../utils/constants"
+import { useState } from "react"
 const Header = () =>{
+    const [btnSwitch, setBtnSwitch] = useState("Login")
     return(
         <div className="header-container">
             <div>
@@ -12,9 +14,12 @@ const Header = () =>{
                     <li>Contact Us</li>
                     <li>Cart</li>
                 </ul>
+                <button onClick={()=>{
+                    btnSwitch === "Login" ? setBtnSwitch("Logout") : setBtnSwitch("Login")
+
+                }}> {btnSwitch} </button>
             </div>
             
-
         </div>
     )
 }

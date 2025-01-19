@@ -17,7 +17,7 @@ Import - import {<name of component / variable>} from "<path>"
 4. it has multiple utility functions
 
 - useState() - super powerful state variables in react 
-- useEffect()
+- useEffect() 
 
 # React
 1. React is only good at Efficient DOM Operations and DOM manupulations
@@ -55,3 +55,15 @@ Virtual DOM - representation of actual dom (Object)
 > 2. [loads]--->[Render]--->[API]--->[render]
 
 **Note:** In react always using 2nd approach 
+
+# useEffect()
+
+1. When the body function will render it will render it. as soon as render cycle is finish it will just quickly call the callback function 
+
+**Optional Chaining**
+
+# Conditional rendering
+
+Rendering bases of condition is known as Conditional Rendering
+
+**Note:** Whenever state variables update, react trigger a reconciliation cycle (re-renders the component)
