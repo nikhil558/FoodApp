@@ -11,11 +11,10 @@ const Body=()=>{
         <>
             <Search/>
             <button type="button" onMouseEnter={()=> {
-                const filteredList = listOfRes.filter(each => each.info.avgRating > 4.5)
+                const filteredList = listOfRes.filter(each => each.info.avgRating >= 4.4)
                 set_resturent_list(filteredList)
-
             } 
-            } onMouseOut={()=>set_resturent_list(Resturent_List)}> Button </button>
+            } onMouseOut={()=>set_resturent_list(Resturent_List)}> Top Rated Resturents </button>
             <div className="resturents-list">
                 {listOfRes.map(each => <Resturentcard key={each.info.id} resCard={each.info} /> )}
             </div>

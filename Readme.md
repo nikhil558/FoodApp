@@ -39,3 +39,19 @@ Virtual DOM - representation of actual dom (Object)
 
 # Diff Algorithem
 1. Diff Algorithem means finds out the difference between 2 virtual doms 
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+# Monolith Architecture 
+
+# Microservice Architecture
+
+
+# Fetch data from backend
+
+**2 approches**
+
+> 1. [loads]--->[API]--->[render]
+> 2. [loads]--->[Render]--->[API]--->[render]
+
+**Note:** In react always using 2nd approach 
