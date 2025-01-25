@@ -3,14 +3,14 @@ import Resturentcard from "./Resturentcard"
 import Shimmer from "./Shimmer"
 // import Resturent_List from "../../utils/mockdata"
 import {useState, useEffect} from "react"
-
+import { Link } from "react-router"
 const Body=()=>{
     const [listOfRes,set_resturent_list] = useState([])
     const [FilListOfRes,setFilResturentList] = useState([])
     const [listSearch, setListSearch] = useState("");
 
     useEffect(()=>{
-         fetchData()
+        fetchData()
     },[])
 
     const fetchData=async()=>{
@@ -20,6 +20,23 @@ const Body=()=>{
         console.log(JSON)
         set_resturent_list(JSON?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
         setFilResturentList(JSON?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+    }
+
+    const PostFetchData= async() => {
+        const postData= await fetch("https://www.swiggy.com/dapi/restaurants/list/update",{
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+            }
+        }).catch(err=>{
+            console.log(err)
+        });
+        const postJSON = await postData.json();
+        console.log(postJSON)
+        set_resturent_list(postJSON?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        setFilResturentList(postJSON?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        
     }
 
     return listOfRes.length === 0 ? <Shimmer/> :(
@@ -38,8 +55,14 @@ const Body=()=>{
             } > Top Rated Resturents </button>
             </div>
             
-            <div className="resturents-list">
-                {FilListOfRes.map(each => <Resturentcard key={each.info.id} resCard={each.info} /> )}
+            <div className="resturents-list" onScroll =  {PostFetchData} >
+                {FilListOfRes.map(each => {
+                    return (
+                        <Link to={"/resturent/"+each.info.id} key={each.info.id}>
+                            <Resturentcard resCard={each.info} /> 
+                        </Link>
+                    )
+                })}
             </div>
         </>
 

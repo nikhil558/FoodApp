@@ -23,12 +23,14 @@
 }
 .nav-container > ul {
     display:flex;
+    list-style: none;
 }
 
-.nav-container > ul > li {
+.nav-list  {
     margin: 10px;
-    list-style: none;
     font-size: 20px;
+    text-decoration: none;
+    color:black
 }
 
 .nav-container{
