@@ -38,6 +38,7 @@ Actual DOM - maens tags <div></div>
 Virtual DOM - representation of actual dom (Object)
 
 **Note**- React is a single page application (just one page components inter change via client side routing)
+**Note** - React has taken sevier steps (very important steps) to make the developer experience very fast
 
 # Diff Algorithem
 1. Diff Algorithem means finds out the difference between 2 virtual doms 
@@ -98,3 +99,67 @@ Rendering bases of condition is known as Conditional Rendering
 
 
 # Dynamic Routing 
+
+- useParams   
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+# Class Component
+
+- It is just normal JS class it extends react component        
+- render method which return peice of JSX which will be displayed on to the UI      
+- constructer funtion which receives the props - inside constructer use super(props)       
+- inside constructer create state variable - this.state        
+- Never update state variables directly   
+- By using this.setState update the state variables     
+- whenever class instance is created constructer will call 
+
+# Component lifecycle
+
+  > Constructer()---->render()---->ComponentDidMount()---->ComponentDidUpdate()    
+  
+- ComponentDidMount() - Run after render
+- ComponentDidUpdate() - Run after update
+- ComponentWillUnMount() - Run if go outside of the page
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+# Custom Hook
+
+1. Function name starts with **use**
+
+# **Chunking**       
+  **code spliting**  
+  **Dynamic bundling**      
+  **Lazy loading**   
+  **on demand loading**     
+  **Dynamic import** 
+  Browser file split into multiple file by using lazy loading. it increases the perfomance of the Application.  
+
+1. use lazy keyword  
+2. Inside <Suspence> will give that component
+3. use fallback argument to present data
+4. Always write lazy out side of the function or component
+
+----------------------------------------------------------------------------------------------------------------------------------------
+# Types used for adding Styles
+
+1. CSS
+2. SASS anD SCSS
+3. Styled-Components
+4. Tailwind CSS
+
+1. Material UI
+2. Bootstrap
+3. Chakra UI
+4. Ant Design
+
+# Tailwind CSS
+
+*Pros* 
+1. Easy to write styles
+2. Tailwind css is very light weight
+
+*Cons*
+1. Large styling makes code ugly
+

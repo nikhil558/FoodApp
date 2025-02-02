@@ -8,12 +8,12 @@ const Resturentcard = (props) => {
     
     return ( 
             
-                <div className="resturent-card">
-                    <div className="res-img" style={{backgroundImage:`url(`+Background+`)`, backgroundSize: 'cover',}}>
+                <div className="w-[200] m-4 p-4 rounded-lg bg-gray-100 hover:bg-gray-300">
+                    <div className="h-[100] rounded-lg" style={{backgroundImage:`url(`+Background+`)`, backgroundSize: 'cover',}}>
                        <span style={{color:"rgba(255, 255, 255, 0.92)", fontWeight:900,padding:10, fontFamily:"ProximaNovaCond_Black"}}>{} {}</span>
                     </div>
                     <div className="res-details">
-                        <h3>{name}</h3>
+                        <h3 className="font-bold">{name}</h3>
                         <h3>{avgRating} • {slaString}</h3>
                         <h3>{cuisines.join(", ")}</h3>
                         <h3>{areaName}</h3>
