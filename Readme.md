@@ -163,3 +163,32 @@ Rendering bases of condition is known as Conditional Rendering
 *Cons*
 1. Large styling makes code ugly
 
+----------------------------------------------------------------------------------------------------------------------------------------
+
+# Higher order component
+
+1. Higher order component is a function takes a component (adding features) and return a component
+
+# Controled component
+
+1. If parent is controlling the child is called controlled component.
+
+- lifting the state up 
+
+# Props drilling
+
+# React Context
+
+1. use context which is kind of global place where our data is kept and anybody can access
+2. use createContext to create context
+
+**2 ways to using context**
+
+1. By using hooks(useContext()) - it is used in functional component
+2. .consumer - it is used in class component
+  - .consumer is a component in that component have callback funtion that gets data inside that
+
+**Update context**
+1. by using .Provider inside that will pass data then every where in the application is updated.
+
+**Note** - React context is very flexible.

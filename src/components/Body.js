@@ -1,15 +1,21 @@
 // import Search from "./Search"
-import Resturentcard from "./Resturentcard"
+import Resturentcard, {withPromotedResturent} from "./Resturentcard"
 import Shimmer from "./Shimmer"
 import useResturentList from "../../utils/useResturentList"
 // import Resturent_List from "../../utils/mockdata"
-import {useState} from "react"
+import {useState, useContext} from "react"
 import { Link } from "react-router"
+import { CommonInfo } from "../../utils/CommonInfo"
+
 const Body=()=>{
     
     const [listSearch, setListSearch] = useState("");
+    const {profileName, setUserName} = useContext(CommonInfo)
+
 
     const {listOfRes, FilListOfRes, setResturentList, topRatedList} = useResturentList()
+
+    const PromotedResturent = withPromotedResturent(Resturentcard)
 
     // const PostFetchData= async() => {
     //     const postData= await fetch("https://www.swiggy.com/dapi/restaurants/list/update",{
@@ -41,13 +47,15 @@ const Body=()=>{
                     topRatedList()
                 } 
                 } > Top Rated Resturents </button>
+                <input type="search" className="m-4 p-2 border border-gray-600 " value={profileName} onChange={e => setUserName(e.target.value)}/>
+
             </div>
             
             <div className="flex flex-wrap" /*onScroll =  {PostFetchData}*/ >
                 {FilListOfRes.map(each => {
                     return (
                         <Link to={"/resturent/"+each.info.id} key={each.info.id}>
-                            <Resturentcard resCard={each.info} /> 
+                            {each?.info?.aggregatedDiscountInfoV3 ? <PromotedResturent resCard={each.info}/> : <Resturentcard resCard={each.info} /> }
                         </Link>
                     )
                 })}

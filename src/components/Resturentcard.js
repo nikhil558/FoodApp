@@ -24,4 +24,15 @@ const Resturentcard = (props) => {
 
 }
 
+export const withPromotedResturent = (ResturentCard) => {
+    return (props) => {
+        return (
+            <>
+                <label className="absolute bg-transparent text-white font-bold ml-5 pl-4 mt-25">{props.resCard.aggregatedDiscountInfoV3.header} {props.resCard.aggregatedDiscountInfoV3.subHeader}</label>
+                <ResturentCard {...props}/>
+            </>
+        )
+    }
+}
+
 export default Resturentcard

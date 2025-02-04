@@ -1,10 +1,13 @@
 import {LOGO_IMG} from "../../utils/constants"
-import { useState } from "react"
+import { useState,useContext} from "react"
 import { Link } from "react-router"
 import useOnlineStatus from "../../utils/useOnlineStatus"
+import { CommonInfo } from "../../utils/CommonInfo"
 
 const Header = () =>{
     const [btnSwitch, setBtnSwitch] = useState("Login")
+    const {profileName} = useContext(CommonInfo)
+
     return(
         <div className="flex justify-between shadow-lg pr-2">
             <div>
@@ -27,6 +30,8 @@ const Header = () =>{
                     </Link>
                 
                     <li className="m-2 pr-2" >Cart</li>
+
+                    <li className="m-2 pr-2"> {profileName} </li>
                 </ul>
                 <button className="bg-blue-700 px-2.5 my-6 h-10 rounded-lg" onClick={()=>{
                     btnSwitch === "Login" ? setBtnSwitch("Logout") : setBtnSwitch("Login")

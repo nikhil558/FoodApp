@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react"
+import React, { lazy, Suspense, useState } from "react"
 import ReactDOM from "react-dom/client"
 import Header from "./components/Header"
 import Body from "./components/Body"
@@ -9,14 +9,18 @@ import Shimmer from "./components/Shimmer"
 // import Grocery from "./components/Grocery"
 import ResturentDetails from "./components/ResturentDetails"
 import { BrowserRouter,Routes,Route,Outlet} from "react-router"
+import { CommonInfo } from "../utils/CommonInfo"
 
 const Grocery = lazy(()=>import("./components/Grocery"))
 
 const AppComponent= () => {
+    const [UserName, setUserName]= useState("")
     return(
         <div className="app-container">
-            <Header/>
-            <Outlet/>
+            <CommonInfo.Provider value={{profileName:UserName,setUserName}}>
+                <Header/>
+                <Outlet/>
+            </CommonInfo.Provider>
         </div>
     )
 }

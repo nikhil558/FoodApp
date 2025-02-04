@@ -1,5 +1,7 @@
 import React from "react"
+import { CommonInfo } from "../../utils/CommonInfo"
 import User from "./User"
+
 
 class UserClass extends React.Component{
     constructor(props){
@@ -19,7 +21,10 @@ class UserClass extends React.Component{
         console.log("render "+this.props.name)
         return (
             <div>
-                <h1>{this.props.name}</h1>
+                <CommonInfo.Consumer>
+                    {({profileName})=><h1>{profileName}</h1>}
+                </CommonInfo.Consumer>
+                
                 <p>{this.props.contact}</p>
                 <div>
                     <User/>
