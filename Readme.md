@@ -192,3 +192,37 @@ Rendering bases of condition is known as Conditional Rendering
 1. by using .Provider inside that will pass data then every where in the application is updated.
 
 **Note** - React context is very flexible.
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+# Redux 
+
+1. Redux is not mandatory required for application. Use redux wisely only it is required  
+2. alternatives of redux is **zustand** 
+3. Redux is primarily used for handling state of the application  
+4. If using redux, application is easy to debug.(Redux offers easy debugging)
+5. Redux tool kit is latest way of using redux
+6. React-redux is a library 
+7. In Redux storage will create many slices (like each category one slice) Eg:- Cart
+
+
+  write data -  Application ------> Dispatch(Action) -----> function (function modifies the slice of the redux store) -----> Redux store
+                                                            (reducer)
+
+  read data -  Redux store ------> Selector(subscribing to the store) -------> application
+
+# Redux toolkit
+  - Install @reduxjs/toolkit and react-redux
+  - Build our store 
+    - configureStore
+  - connect our store to our app 
+    - Provider
+  - slice
+    - createSlice
+      - Name 
+      - initialState
+      - reducers
+  - dispatch(action)
+    - useDispatch
+  - Selector
+    - useSelector

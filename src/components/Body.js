@@ -4,7 +4,7 @@ import Shimmer from "./Shimmer"
 import useResturentList from "../../utils/useResturentList"
 // import Resturent_List from "../../utils/mockdata"
 import {useState, useContext} from "react"
-import { Link } from "react-router"
+
 import { CommonInfo } from "../../utils/CommonInfo"
 
 const Body=()=>{
@@ -52,13 +52,9 @@ const Body=()=>{
             </div>
             
             <div className="flex flex-wrap" /*onScroll =  {PostFetchData}*/ >
-                {FilListOfRes.map(each => {
-                    return (
-                        <Link to={"/resturent/"+each.info.id} key={each.info.id}>
-                            {each?.info?.aggregatedDiscountInfoV3 ? <PromotedResturent resCard={each.info}/> : <Resturentcard resCard={each.info} /> }
-                        </Link>
-                    )
-                })}
+                {FilListOfRes.map(each => 
+                    each?.info?.aggregatedDiscountInfoV3 ? <PromotedResturent resCard={each.info} key={each.info.id}/> : <Resturentcard resCard={each.info} key={each.info.id}/> 
+                )}
             </div>
         </>
 

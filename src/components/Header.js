@@ -3,10 +3,14 @@ import { useState,useContext} from "react"
 import { Link } from "react-router"
 import useOnlineStatus from "../../utils/useOnlineStatus"
 import { CommonInfo } from "../../utils/CommonInfo"
+import { useSelector } from "react-redux"
 
 const Header = () =>{
     const [btnSwitch, setBtnSwitch] = useState("Login")
     const {profileName} = useContext(CommonInfo)
+
+    const cart = useSelector((store)=> store.cart.items)
+    const fav = useSelector((store)=> store.favorites.items)
 
     return(
         <div className="flex justify-between shadow-lg pr-2">
@@ -28,8 +32,15 @@ const Header = () =>{
                     <Link to="/grocery" className="m-2 pr-2">
                         <li> Grocery </li>
                     </Link>
-                
-                    <li className="m-2 pr-2" >Cart</li>
+
+                    <Link to="/favorites">
+                        <li className="m-2 pr-2 font-bold">Favorites ({fav.length})</li>
+                    </Link>
+
+                    <Link to="/cart">
+                        <li className="m-2 pr-2 font-bold">Cart ({cart.length})</li>
+                    </Link>
+                    
 
                     <li className="m-2 pr-2"> {profileName} </li>
                 </ul>
