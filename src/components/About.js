@@ -4,19 +4,19 @@ import UserClass from "./UserClass"
 class About extends React.Component{
     constructor(props){
         super(props)
-        console.log("parent constructor")
+        // console.log("parent constructor")
     }
 
     componentDidMount(){
-        console.log("parent component did mount")
+        // console.log("parent component did mount")
     }
 
     componentDidUpdate(){
-        console.log("parent component will update")
+        // console.log("parent component will update")
     }
     
     render(){
-        console.log("parent Render")
+        // console.log("parent Render")
         return (
             <div>
                 <h1>Food Application</h1>

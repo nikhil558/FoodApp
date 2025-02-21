@@ -10,7 +10,7 @@ const ItemList = ({resCard}) => {
     }
 
     return (
-        <div className="flex justify-between shadow m-4 px-2 py-4">
+        <div data-testid="itemId" className="flex justify-between shadow m-4 px-2 py-4">
             <div className="w-9/12 text-left">
                 <h1 className="font-bold">{resCard.card.info.name} </h1>
                 <p>{resCard.card.info.description} </p>

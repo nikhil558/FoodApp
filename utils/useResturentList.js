@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 
 const useResturentList = () => {
     const [listOfRes,set_resturent_list] = useState([])
-    const [FilListOfRes,setFilResturentList] = useState([])
+    const [filListOfRes,setFilResturentList] = useState([])
 
     useEffect(()=>{
         fetchData()
@@ -29,7 +29,7 @@ const useResturentList = () => {
 
     
 
-    return {listOfRes, FilListOfRes, setResturentList, topRatedList}
+    return {listOfRes, filListOfRes, setResturentList, topRatedList}
 }
 
 export default useResturentList

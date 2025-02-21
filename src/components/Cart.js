@@ -18,6 +18,7 @@ const Cart = () =>{
             <div className="shadow bg-gray-100 w-6/12 m-auto p-4 mt-4">
                 {cartItems.map(each=> <ItemList resCard={each} key={each.card.info.id}/>)}
             </div>
+            {cartItems.length===0 && <p> Cart is empty</p>}
         </div>
     )
 }

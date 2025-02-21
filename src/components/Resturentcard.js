@@ -25,10 +25,10 @@ const Resturentcard = (props) => {
             // setIsFav(false)
         }
     }
-    console.log("rescard")
+    // console.log("rescard")
     
     return ( 
-            <div>
+            <div data-testid="resCard">
                 <span onClick={()=> handelFav(resCard)}>{isFav.length!==0 ? "❤️":"🖤"}</span>
                 <Link to={"/resturent/"+resCard.id} >
                     <div className="w-[200] m-4 p-4 rounded-lg bg-gray-100 hover:bg-gray-300">
@@ -50,7 +50,7 @@ const Resturentcard = (props) => {
 
 export const withPromotedResturent = (ResturentCard) => {
     return (props) => {
-        console.log("promoted")
+        // console.log("promoted")
         return (
             <>
                 <label className="absolute bg-transparent text-white font-bold ml-5 pl-4 mt-25">{props.resCard.aggregatedDiscountInfoV3.header} {props.resCard.aggregatedDiscountInfoV3.subHeader}</label>

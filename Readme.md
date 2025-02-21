@@ -226,3 +226,41 @@ Rendering bases of condition is known as Conditional Rendering
     - useDispatch
   - Selector
     - useSelector
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+# Types of testing (developer)
+- Unit Testing (Test our react component in Isolation - testing one unit or one component in isolation)
+- Integration Testing (They are multiple components and they talking to each other and we will develop a flow of an action in react application)
+- End to End Tesing - e2e testing (testing the react application as soon as user lands on the website to the user leaves the website )
+
+# Unit Testing
+  - React Testing Library
+    - Jest
+
+# Setting up Testing our app
+  - Install React Testing Library
+  - Install Jest 
+  - Install babel dependencies
+  - Configure Babel
+  - Configure Parcel config file to disable default babel transpilation
+  - Jest Configuration (npx jest --init)
+  - Install jsdom library (if jest version is > 28)
+  - npm install -D jest-environment-jsdom
+  - __ means dunder
+  - Install @babel/preset-react - To make JSX work in test cases
+  - Include @babel/preset-react inside babel config ["@babel/preset-react",{runtime:"automatic"}]
+  - npm i -D @testing-library/jest-dom
+
+# While testing
+  - render
+  - screen
+  - fireEvent
+  - beforeAll
+  - beforeEach
+  - afterAll
+  - afterEach
+
+  Note: put **jest --watch** in package.jsos that will automatically run when file saves
+  
+  1. If render the fecth, need to use ACT function

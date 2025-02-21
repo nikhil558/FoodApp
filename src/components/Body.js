@@ -13,7 +13,7 @@ const Body=()=>{
     const {profileName, setUserName} = useContext(CommonInfo)
 
 
-    const {listOfRes, FilListOfRes, setResturentList, topRatedList} = useResturentList()
+    const {listOfRes, filListOfRes, setResturentList, topRatedList} = useResturentList()
 
     const PromotedResturent = withPromotedResturent(Resturentcard)
 
@@ -33,17 +33,18 @@ const Body=()=>{
     //     setFilResturentList(postJSON?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
         
     // }
+    // console.log(FilListOfRes)
 
     return listOfRes.length === 0 ? <Shimmer/> :(
         <>
             <div className="flex shadow-lg">
-                <input type="search" className="m-4 p-2 border-gray-600 " value={listSearch} onChange={e => setListSearch(e.target.value)}/>
+                <input data-testid="SearchInput" type="search" className="m-4 p-2 border-gray-600 " value={listSearch} onChange={e => setListSearch(e.target.value)}/>
                 <button className="rounded-lg bg-blue-700 m-4 px-4" onClick={()=>{
                     
                     setResturentList(listSearch)
 
                 }}>Search</button>
-                <button type="button" className="rounded-lg bg-blue-700 m-4 px-4" onMouseEnter={()=> {
+                <button type="button" className="rounded-lg bg-blue-700 m-4 px-4" onClick={()=> {
                     topRatedList()
                 } 
                 } > Top Rated Resturents </button>
@@ -52,7 +53,7 @@ const Body=()=>{
             </div>
             
             <div className="flex flex-wrap" /*onScroll =  {PostFetchData}*/ >
-                {FilListOfRes.map(each => 
+                {filListOfRes.map(each => 
                     each?.info?.aggregatedDiscountInfoV3 ? <PromotedResturent resCard={each.info} key={each.info.id}/> : <Resturentcard resCard={each.info} key={each.info.id}/> 
                 )}
             </div>
