@@ -1,21 +1,37 @@
+import ItemList from "./itemList";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
-import ItemList from "./itemList"
-
-const ResturentCategory = ({resCategory, showItem, handel }) => {
-    
-    return  (
-        <div className="shadow bg-gray-100 w-6/12 m-auto p-4 mt-4" >
-            <div className="flex justify-between " onClick={()=>handel()}>
-                <h1>{resCategory.card.card.title}{" ("+resCategory.card.card.itemCards.length+")"}</h1>
-                <span>↑</span>
-            </div>
-            {showItem && <div>
-                {resCategory.card.card.itemCards.map((each)=> <ItemList resCard={each} key={each.card.info.id}/>)}
-            </div>}
-            
+const ResturentCategory = ({ resCategory, showItem, handel }) => {
+  return (
+    <div className="shadow-lg border-0 bg-card/80 backdrop-blur mb-4 p-4">
+      <div
+        className="cursor-pointer hover:bg-accent/50 transition-colors rounded-t-lg"
+        onClick={() => handel()}
+      >
+        <div className="flex justify-between items-center">
+          <h2 className="text-lg font-bold">
+            {resCategory.card.card.title}
+            <span className="ml-2 text-sm font-normal text-muted-foreground">
+              ({resCategory.card.card.itemCards.length})
+            </span>
+          </h2>
+          {showItem ? (
+            <ChevronUp className="h-5 w-5 text-muted-foreground" />
+          ) : (
+            <ChevronDown className="h-5 w-5 text-muted-foreground" />
+          )}
         </div>
-    )
-}
+      </div>
 
+      {showItem && (
+        <div className="p-0 border-t border-border/50">
+          {resCategory.card.card.itemCards.map((each) => (
+            <ItemList resCard={each} key={each.card.info.id} />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
 
-export default ResturentCategory
+export default ResturentCategory;
