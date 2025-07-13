@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import ItemList from "./itemList";
+import ItemList from "./ItemList";
 import { clearItem } from "../../utils/CartSlice";
 import { ShoppingCart, Trash2 } from "lucide-react";
 

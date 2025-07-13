@@ -1,4 +1,4 @@
-import ItemList from "./itemList";
+import ItemList from "./ItemList";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 const ResturentCategory = ({ resCategory, showItem, handel }) => {
